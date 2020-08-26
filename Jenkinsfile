@@ -44,7 +44,7 @@ try
 			   if(action == "init"){
 			   
 				  options = "-reconfigure\
-				  -backend-config='region=${env.aws_region)'";
+				  -backend-config ='region = ${env.aws_region)'";
 			   }else if( action == "destroy")
 			   {
 				  options= "-force";
