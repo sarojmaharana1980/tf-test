@@ -31,11 +31,17 @@ try
 		
 		stage ("Apply")
 		{
-		  def exitcode = terraform("apply");
-		  if(0 == exitcode) {
-		    println "Sucess";
-		  }else {
-		    println "Failure";
+		  try
+		  {
+			  def exitcode = terraform("apply");
+			  if(0 == exitcode) {
+				println "Sucess";
+			  }else {
+				println "Failure";
+			  }
+		  }catch(Exception e)
+		  {
+			 println e; 
 		  }
 		}
 
@@ -61,6 +67,9 @@ try
 		  ]])*/
 		  //{
 			//scripts {
+				
+			  try {
+				  
 			   if(action == "init"){
 			   
 				  //options = "-reconfigure  -backend-config ='region = ${env.aws_region)'";
@@ -69,9 +78,15 @@ try
 				  options= "-force";
 			   } else if( action == "apply")
 			   {
+				   println "action=apply";
 				  options= "-auto-apprpve";
 			   }else {
 				 options= "";
+			   }
+			   
+			   }catch (Exception e)
+			   {
+				  println e; 
 			   }
 			   
 			   EXIT_CODE = '0';
