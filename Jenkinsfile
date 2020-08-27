@@ -21,7 +21,7 @@ try
 
 		stage ("Intialize")
 		{
-		  def exitcode = terraform(terraformDir, "init");
+		  def exitcode = terraform("init");
 		  if(0 == exitcode) {
 		    println "Sucess";
 		  }else {
@@ -31,7 +31,7 @@ try
 		
 		stage ("Apply")
 		{
-		  def exitcode = terraform(terraformDir, "apply");
+		  def exitcode = terraform("apply");
 		  if(0 == exitcode) {
 		    println "Sucess";
 		  }else {
@@ -48,7 +48,7 @@ try
 		}
 }
 		
-		def terraform(terraformDir, action)
+		def terraform(action)
 		{
 		  def EXIT_CODE;
 		  /*
