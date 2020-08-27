@@ -39,6 +39,15 @@ try
 		  }
 		}
 
+		
+
+		}catch(Exception e){
+	
+			throw e;
+	
+		}
+}
+		
 		def terraform(terraformDir, action)
 		{
 		  def EXIT_CODE;
@@ -73,13 +82,7 @@ try
 		  //}
 
 		}
-
-		}catch(Exception e){
-	
-			throw e;
-	
-		}
-}
+//}
 
 //}
 
