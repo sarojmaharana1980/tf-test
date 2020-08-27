@@ -23,22 +23,33 @@ try
 		{
 		  def exitcode = terraform(terraformDir, "init");
 		  if(0 == exitcode) {
-		  
+		    println "Sucess";
 		  }else {
-		  
+		    println "Failure";
+		  }
+		}
+		
+		stage ("Apply")
+		{
+		  def exitcode = terraform(terraformDir, "apply");
+		  if(0 == exitcode) {
+		    println "Sucess";
+		  }else {
+		    println "Failure";
 		  }
 		}
 
 		def terraform(terraformDir, action)
 		{
 		  def EXIT_CODE;
+		  /*
 		  println env.aws_region;
 		  withCredentials([[
 			 $class: 'AmazonWebServicesCredentialsBinding',
 			 credentialsId: 'AWS_ACCESS_KEY_ID',
 			 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 		  
-		  ]])
+		  ]])*/
 		  {
 			scripts {
 			   if(action == "init"){
