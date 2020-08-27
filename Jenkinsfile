@@ -51,7 +51,7 @@ try
 		  
 		  ]])*/
 		  {
-			scripts {
+			//scripts {
 			   if(action == "init"){
 			   
 				  //options = "-reconfigure  -backend-config ='region = ${env.aws_region)'";
@@ -68,7 +68,7 @@ try
 			   EXIT_CODE = '0';
 			   
 			   //EXIT_CODE = sh(returnStatus: true, script:"""" terraform ${action} ${options} """");
-			}
+			//}
 		  
 		  }
 
