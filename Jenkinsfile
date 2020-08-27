@@ -50,7 +50,7 @@ try
 			 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
 		  
 		  ]])*/
-		  {
+		  //{
 			//scripts {
 			   if(action == "init"){
 			   
@@ -70,7 +70,7 @@ try
 			   //EXIT_CODE = sh(returnStatus: true, script:"""" terraform ${action} ${options} """");
 			//}
 		  
-		  }
+		  //}
 
 		}
 
