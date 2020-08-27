@@ -54,7 +54,9 @@ try
 				 options= "";
 			   }
 			   
-			   EXIT_CODE = sh(returnStatus: true, script:"""" terraform ${action} ${options} """");
+			   EXIT_CODE = '0';
+			   
+			   //EXIT_CODE = sh(returnStatus: true, script:"""" terraform ${action} ${options} """");
 			}
 		  
 		  }
